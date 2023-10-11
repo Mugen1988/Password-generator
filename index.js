@@ -25,24 +25,27 @@ function copyToClipboard(text) {
 }
 
 generateBtn.addEventListener('click', function() {
-    const password = generatePasswords(15);
-    passwordOne.innerHTML = `${password} <i class="fa fa-copy" id="copy-password-one"></i>`;
-    passwordTwo.innerHTML = `${password} <i class="fa fa-copy" id="copy-password-two"></i>`;
+    const password1 = generatePasswords(15);
+    const password2 = generatePasswords(15);
 
-    // Add event listener for icons
+    passwordOne.innerHTML = `${password1} <i class="fa fa-copy" id="copy-password-one"></i>`;
+    passwordTwo.innerHTML = `${password2} <i class="fa fa-copy" id="copy-password-two"></i>`;
+
+    // Add event listener for copying password
     const copyIconOne = document.getElementById('copy-password-one');
     const copyIconTwo = document.getElementById('copy-password-two');
-    
-    //click function for 1st icon
+
     copyIconOne.addEventListener('click', function() {
-        copyToClipboard(password);
-        alert('Password copied to clipboard!');
+        copyToClipboard(password1);
+        alert('Password 1 copied to clipboard!');
     });
-    //click function for 2nd icon
+
     copyIconTwo.addEventListener('click', function() {
-        copyToClipboard(password);
-        alert('Password copied to clipboard!');
+        copyToClipboard(password2);
+        alert('Password 2 copied to clipboard!');
     });
 });
+
+
 
 
